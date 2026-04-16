@@ -1,7 +1,7 @@
 ---
 layout: opencs
 title: H.E.I.S.T.EXE
-permalink: /gamify/heist
+permalink: /heist
 ---
 
 <link rel="stylesheet" href="{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-game.css">

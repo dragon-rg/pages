@@ -3,7 +3,7 @@
 //  Sector: SECURITY HUB  |  Difficulty: OPERATIVE
 // =============================================================
 
-const _coreUrl = new URL('./heist-core.js', import.meta.url).href;
+const _coreUrl = new URL('../Core/heist-core.js', import.meta.url).href;
 const { registerLevel, buildBorderWalls, rectWall, COLS, ROWS, CELL } = await import(_coreUrl);
 
 registerLevel({

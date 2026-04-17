@@ -2,9 +2,9 @@
 //  H.E.I.S.T.EXE  —  heist-core.js
 // =============================================================
 
-import { initNPCSystem }   from '../heist-npc.js';
-import { initLeaderboard } from '../heist-leaderboard.js';
-import { runMinigame }     from '../heist-minigames.js';
+import { initNPCSystem }   from './heist-npc.js';
+import { initLeaderboard } from './heist-leaderboard.js';
+import { runMinigame }     from './heist-minigames.js';
 
 // ─── GRID CONSTANTS ──────────────────────────────────────────
 export const CELL = 32;

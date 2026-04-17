@@ -4,8 +4,8 @@ title: H.E.I.S.T.EXE
 permalink: /heist
 ---
 
-<link rel="stylesheet" href="{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-game.css">
-<link rel="stylesheet" href="{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-leaderboard.css">
+<link rel="stylesheet" href="{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Assets%20&%20Styling/heist-game.css">
+<link rel="stylesheet" href="{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Assets%20&%20Styling/heist-leaderboard.css">
 
 <div id="heist-shell">
 
@@ -152,13 +152,14 @@ permalink: /heist
   window._fetchOptions = fetchOptions;
 </script>
 <script type="module">
-  import { initGame, startGame } from '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-core.js';
-  import { INTRO_SCENES } from '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-level-1.js';
-  import '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-level-2.js';
-  import '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-level-3.js';
-  import { showEndingCutscene } from '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-level-4.js';
-  import '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-npc.js';
-  import '{{site.baseurl}}/assets/js/GameEnginev1.1/heist/heist-leaderboard.js';
+
+  import { initGame, startGame } from '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Core/heist-core.js';
+  import { INTRO_SCENES } from '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Levels/heist-level-1.js';
+  import '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Levels/heist-level-2.js';
+  import '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Levels/heist-level-3.js';
+  import { showEndingCutscene } from '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Levels/heist-level-4.js';
+  import '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Core/heist-npc.js';
+  import '{{site.baseurl}}/pages/_projects/H.E.I.S.T.EXE/Core/heist-leaderboard.js';
 
   initGame({
     canvasId:         'c',

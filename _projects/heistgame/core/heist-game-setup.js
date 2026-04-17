@@ -5,8 +5,8 @@
 
 import GameCore from '{{site.baseurl}}/assets/js/GameEnginev1.1/essentials/Game.js';
 import GameControl from '{{site.baseurl}}/assets/js/GameEnginev1.1/essentials/GameControl.js';
-import HeistLevel from '../Core/HeistLevel.js';
-import { LEVELS, registerLevel } from '../Core/heist-core.js';
+import HeistLevel from './HeistLevel.js';
+import { LEVELS, registerLevel } from './heist-core.js';
 
 // Import your level definitions
 import '../Levels/heist-level-1.js';

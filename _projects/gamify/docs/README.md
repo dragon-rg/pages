@@ -82,7 +82,7 @@ make build-registered-docs # docs are not in make dev
 
 ## CI/CD Targets and Action Logs
 
-GitHub Actions uses the same registered targets:
+GitHub Actions uses the same registered  targets:
 
 ```yaml
 - name: Build registered projects

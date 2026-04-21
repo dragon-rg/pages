@@ -1,9 +1,9 @@
 # Makefile
 # Generic targets: build, assets, clean, watch, docs, docs-clean
-# Called from main Makefile via: make -C _projects/cs-pathway-game <target>
+# Called from main Makefile via: make -C _projects/collisions-mechanic <target>
 
 ###########################################
-# CS Pathway Game Project Configuration
+# Collision Mechanics Project Configuration
 ###########################################
 
 # Project paths (relative to workspace root)

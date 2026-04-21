@@ -1,13 +1,13 @@
 # Makefile
 # Generic targets: build, assets, clean, watch, docs, docs-clean
-# Called from main Makefile via: make -C _projects/cs-pathway-game <target>
+# Called from main Makefile via: make -C _projects/local-storage <target>
 
 ###########################################
-# CS Pathway Game Project Configuration
+# Local StorageProject Configuration
 ###########################################
 
 # Project paths (relative to workspace root)
-DATE_OF_CREATION = 2026-04-12
+DATE_OF_CREATION = 2026-04-20
 PROJECT_SRC = $(CURDIR)
 PROJECT_NAME = $(notdir $(PROJECT_SRC))
 NOTEBOOK_FILENAME = $(DATE_OF_CREATION)-$(PROJECT_NAME).ipynb

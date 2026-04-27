@@ -28,7 +28,7 @@ DOCS_DEST = $(WORKSPACE_ROOT)/_posts/projects/$(PROJECT_NAME)
 # Main build target - copy notebook and call assets
 build:
 	@mkdir -p $(NOTEBOOK_DEST)
-	@cp notebook.src.ipynb $(NOTEBOOK_DEST)/$(NOTEBOOK_FILENAME) 2>/dev/null || true
+	@cp local-storage-lesson.ipynb $(NOTEBOOK_DEST)/$(NOTEBOOK_FILENAME) 2>/dev/null || true
 	@$(MAKE) assets
 	@echo "✅ $(PROJECT_NAME) built successfully"
 	@echo "   Source: _projects/$(PROJECT_NAME)/"
@@ -40,8 +40,6 @@ build:
 assets:
 	@mkdir -p $(JS_DEST)/levels
 	@cp levels/*.js $(JS_DEST)/levels/ 2>/dev/null || true
-	@mkdir -p $(JS_DEST)/model
-	@cp model/*.js $(JS_DEST)/model/ 2>/dev/null || true
 	@mkdir -p $(IMAGES_DEST)
 	@cp -r images/* $(IMAGES_DEST)/ 2>/dev/null || true
 
@@ -62,21 +60,17 @@ watch:
 	@echo "👀 Watching $(PROJECT_NAME) project (auto-copy on save)..."
 	@if command -v fswatch >/dev/null 2>&1; then \
 		fswatch -l 0.3 -r $(PROJECT_SRC) 2>/dev/null | while read changed_file; do \
-			if echo "$$changed_file" | grep -q "notebook.src.ipynb"; then \
-				echo "  🔄 Notebook changed - copying and converting..."; \
-				mkdir -p $(NOTEBOOK_DEST); \
-				cp $(PROJECT_SRC)/notebook.src.ipynb $(NOTEBOOK_DEST)/$(NOTEBOOK_FILENAME) 2>/dev/null || true; \
+		if echo "$$changed_file" | grep -q "local-storage-lesson.ipynb"; then \
+			echo "  🔄 Notebook changed - copying and converting..."; \
+			mkdir -p $(NOTEBOOK_DEST); \
+			cp $(PROJECT_SRC)/local-storage-lesson.ipynb $(NOTEBOOK_DEST)/$(NOTEBOOK_FILENAME) 2>/dev/null || true; \
 				cd $(WORKSPACE_ROOT) && make convert-single NOTEBOOK_FILE="$(NOTEBOOK_DEST)/$(NOTEBOOK_FILENAME)" 2>&1; \
 			elif echo "$$changed_file" | grep -q "/levels/"; then \
 				filename=$$(basename "$$changed_file"); \
 				echo "  🔄 Level changed: $$filename"; \
 				mkdir -p $(JS_DEST)/levels; \
 				cp "$$changed_file" $(JS_DEST)/levels/ 2>/dev/null || true; \
-			elif echo "$$changed_file" | grep -q "/model/"; then \
-				filename=$$(basename "$$changed_file"); \
-				echo "  🔄 Model changed: $$filename"; \
-				mkdir -p $(JS_DEST)/model; \
-				cp "$$changed_file" $(JS_DEST)/model/ 2>/dev/null || true; \
+
 			elif echo "$$changed_file" | grep -q "/images/"; then \
 				echo "  🔄 Images changed - copying all images..."; \
 				$(MAKE) assets 2>&1 | grep -v "cp:" | head -1; \
